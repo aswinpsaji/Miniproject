@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <h4>It's free and only takes a minute</h4>
+      <form action="/signup" method="POST">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" id="password"  placeholder="Enter Password" name="psw" onkeyup='check_pass();' required >
+  
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" id="confirm_password"  placeholder="Repeat Password" name="psw-repeat" onkeyup='check_pass();' required >
+
+          <button type="submit" class = "signupbtn"  id="submit" disabled >Sign Up</button>
+      </form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="/">Login here</a>
+    </p>
+    <script>
+      function check_pass() {
+        
+          if (document.getElementById('password').value ===
+                  document.getElementById('confirm_password').value) {
+              document.getElementById('submit').disabled = false;
+          } else {
+              document.getElementById('submit').disabled = true;
+          }
+      }
+      
+      </script>
+  </body>
+</html>
